@@ -38,11 +38,12 @@ public final class BoardAI extends javax.swing.JFrame {
     public BoardAI() {
         initComponents();
         this.setTitle("Caro Game");
+        this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
         this.getContentPane().setLayout(null);
         //Set layout dạng lưới cho panel chứa button
-        plBoardContainer.setLayout(new GridLayout(20, 20));
+        plBoardContainer.setLayout(new GridLayout(19, 19));
         //Setup play button
         for (int i = 0; i < Buttons.length; i++) {
             for (int j = 0; j < Buttons.length; j++) {
@@ -85,6 +86,7 @@ public final class BoardAI extends javax.swing.JFrame {
         }
         preButton=null;
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -111,7 +113,7 @@ public final class BoardAI extends javax.swing.JFrame {
         jbUndo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jTextArea1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -151,11 +153,11 @@ public final class BoardAI extends javax.swing.JFrame {
 
         lbAvartar2.setBackground(new java.awt.Color(255, 153, 153));
         lbAvartar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3 (1).png"))); // NOI18N
-        lbAvartar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 153), 2));
+        lbAvartar2.setBorder(null);
 
         lbAvartar1.setBackground(new java.awt.Color(255, 153, 153));
         lbAvartar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1 (1).png"))); // NOI18N
-        lbAvartar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 153), 2));
+        lbAvartar1.setBorder(null);
 
         lbTen1.setText("Bình");
 
@@ -221,7 +223,12 @@ public final class BoardAI extends javax.swing.JFrame {
 
         jButton3.setText("Trang chủ");
 
-        jButton4.setText("Thoát");
+        exit.setText("Thoát");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setText(" ");
 
@@ -240,7 +247,7 @@ public final class BoardAI extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -254,7 +261,7 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(exit))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -294,6 +301,12 @@ public final class BoardAI extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+       
+    }//GEN-LAST:event_exitActionPerformed
  private void handleClickButton(Point point) {
 
         // TODO: CALC LOGIC HERE
@@ -350,13 +363,13 @@ public final class BoardAI extends javax.swing.JFrame {
     
     private void displayUserWin(){
         String tmp = jTextArea1.getText();
-        tmp+="--Bạn đã thắng";
+        tmp+="-Bạn đã thắng";
         jTextArea1.setText(tmp);
         jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
     }
     private void displayAIWin(){
         String tmp = jTextArea1.getText();
-        tmp+="--Máy thắng";
+        tmp+="-Máy thắng";
         jTextArea1.setText(tmp);
         jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
     }
@@ -875,9 +888,9 @@ public final class BoardAI extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exit;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;

@@ -47,7 +47,7 @@ public class Register extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Game Cờ CaRo");
+        setTitle("Game Caro");
         setAlwaysOnTop(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,10 +81,10 @@ public class Register extends javax.swing.JFrame {
                 btndangkyActionPerformed(evt);
             }
         });
-        getContentPane().add(btndangky, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 130, -1));
+        getContentPane().add(btndangky, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 130, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/nenDangKy.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 590));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
