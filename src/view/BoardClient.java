@@ -24,8 +24,9 @@ public final class BoardClient extends javax.swing.JFrame {
 
     public BoardClient() {
         initComponents();
-        this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
         this.setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // board
         plBoardContainer.setLayout(new GridLayout(ROW, COLUMN));
@@ -292,38 +293,8 @@ public final class BoardClient extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BoardClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
+    
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
