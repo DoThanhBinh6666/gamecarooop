@@ -8,6 +8,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.ImageIcon;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,6 +24,7 @@ public final class BoardClient extends javax.swing.JFrame {
 
     public BoardClient() {
         initComponents();
+        this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // board

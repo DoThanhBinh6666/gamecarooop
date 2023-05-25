@@ -37,6 +37,7 @@ public final class BoardAI extends javax.swing.JFrame {
     
     public BoardAI() {
         initComponents();
+        this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
         this.setTitle("Caro Game");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);

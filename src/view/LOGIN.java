@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -17,7 +18,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        
+        this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
         this.setLocationRelativeTo(null); //hien ra giua man hinh
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// de chay file tat no ko chay tren nen
 
