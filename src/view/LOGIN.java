@@ -6,6 +6,7 @@ package view;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,8 +39,8 @@ public class Login extends javax.swing.JFrame {
 
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
+        txtmatkhau = new javax.swing.JPasswordField();
+        txtdangnhap = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,15 +62,20 @@ public class Login extends javax.swing.JFrame {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON-LOGIN1.jpg"))); // NOI18N
         jButton1.setText("ĐĂNG NHẬP ");
         jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 160, -1));
 
-        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPasswordField1.setName("jPasswordField1"); // NOI18N
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 200, -1));
+        txtmatkhau.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtmatkhau.setName("txtmatkhau"); // NOI18N
+        getContentPane().add(txtmatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 200, -1));
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextField1.setName("jTextField1"); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 200, -1));
+        txtdangnhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtdangnhap.setName("txtdangnhap"); // NOI18N
+        getContentPane().add(txtdangnhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("MẬT KHẨU     ");
@@ -93,6 +99,30 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+       String username = txtdangnhap.getText();
+       String password = new String(txtmatkhau.getPassword());
+
+    // Kiểm tra nếu chưa nhập tên đăng nhập hoặc mật khẩu
+    if (username.isEmpty() || password.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Vui lòng nhập tên đăng nhập và mật khẩu");
+        return;
+    }
+
+    // Kiểm tra nếu tên đăng nhập và mật khẩu không đúng
+    if (!username.equals("binh123") || !password.equals("Binh2710")) {
+        JOptionPane.showMessageDialog(this, "Tên đăng nhập hoặc mật khẩu không đúng");
+        return;
+    }
+    Home myHome = new Home();
+    myHome.setVisible(true);
+
+    // Đóng JFrame hiện tại
+    this.dispose();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,7 +166,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtdangnhap;
+    private javax.swing.JPasswordField txtmatkhau;
     // End of variables declaration//GEN-END:variables
 }

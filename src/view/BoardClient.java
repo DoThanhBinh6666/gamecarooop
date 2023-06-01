@@ -253,10 +253,10 @@ public final class BoardClient extends javax.swing.JFrame {
         plPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Người chơi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
         lbAvartar2.setBackground(new java.awt.Color(255, 153, 153));
-        lbAvartar2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 153), 2));
+        lbAvartar2.setBorder(null);
 
         lbAvartar1.setBackground(new java.awt.Color(255, 153, 153));
-        lbAvartar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 153), 2));
+        lbAvartar1.setBorder(null);
 
         lbTen1.setText("Bình");
 
