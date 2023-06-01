@@ -3,33 +3,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 /**
  *
  * @author binh0
  */
-public class Register extends javax.swing.JFrame {
-
+public class Ratings extends javax.swing.JFrame {
 
     /**
-     * Creates new form register
+     * Creates new form ratings
      */
-    public Register() {
+    public Ratings() {
         initComponents();
         this.setIconImage(new ImageIcon("src/IMG/icon game.png").getImage());
         this.setTitle("Caro Game");
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
-
+        
     }
 
     /**
@@ -42,34 +39,26 @@ public class Register extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        txttennguoichoi = new javax.swing.JTextField();
         txtidnguoichoi = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Tên Người Chơi");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 120, -1));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        jLabel1.setText("Nhập ID người chơi :");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ID");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 100, -1));
-
-        jButton1.setText("Đăng Ký");
+        jButton1.setText("Tìm Kiếm");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 112, -1));
 
         jButton2.setText("Thoát");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -77,17 +66,12 @@ public class Register extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 87, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, -1));
+        getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 150, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
 
-        txttennguoichoi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txttennguoichoiActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txttennguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 119, -1));
-        getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, -1));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 6, 37, -1));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 180));
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -95,16 +79,11 @@ public class Register extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       Home homeFrame = new Home(); // tạo một đối tượng JFrame mới
       homeFrame.setVisible(true); // hiển thị JFrame mới
-      this.dispose(); // đóng JFrame hiện tại
+      this.dispose(); // đóng JFrame hiện tại        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void txttennguoichoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttennguoichoiActionPerformed
-        
-    }//GEN-LAST:event_txttennguoichoiActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String ten_nguoi_choi= txttennguoichoi.getText();
-    String ID = txtidnguoichoi.getText();
+     String ID= txtidnguoichoi.getText();
 
     // Kiểm tra xem giá trị của trường idNguoiChoi có phải là số không âm hay không
     if (!ID.matches("\\d+")) {
@@ -118,30 +97,28 @@ public class Register extends javax.swing.JFrame {
     String password = "";
 
     try (Connection conn = DriverManager.getConnection(url, username, password)) {
-        // Chuẩn bị truy vấn chèn dữ liệu
-        String query = "INSERT INTO nguoi_choi (ten_nguoi_choi, ID) VALUES (?, ?)";
-        PreparedStatement statement = conn.prepareStatement(query);
-   
-        // Thiết lập giá trị cho các tham số của truy vấn
-        statement.setString(1, ten_nguoi_choi);
-        statement.setInt(2, Integer.parseInt(ID)); 
+ 
+    String query = "SELECT so_tran_thang,diem_so FROM nguoi_choi WHERE ID = ?";
+    PreparedStatement statement = conn.prepareStatement(query);
 
-        // Thực thi truy vấn chèn dữ liệu và lấy số lượng bản ghi bị ảnh hưởng
-        int rowsInserted = statement.executeUpdate();
+    // Thiết lập giá trị cho các tham số của truy vấn
+    statement.setInt(1, Integer.parseInt(ID));
 
-        // In ra thông báo nếu chèn dữ liệu thành công
-        if (rowsInserted > 0) {
-            System.out.println("Thêm thành công,sẵn sàng thịt mấy con gà thôi nào");
-        }
+    // Thực thi truy vấn và lấy kết quả
+   java.sql.ResultSet rs = statement.executeQuery();
 
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }   
+    // Lấy dữ liệu từ ResultSet và hiển thị chúng trên giao diện người dùng
+    if (rs.next()) {
+        int so_tran_thang = rs.getInt("so_tran_thang");
+        int diem_so = rs.getInt("diem_so");
+        JOptionPane.showMessageDialog(this, "Số trận thắng: " + so_tran_thang + "\nĐiểm số: " + diem_so);
+    } else {
+        JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin người chơi với ID: " + ID);      
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+} catch (SQLException e) {
+    e.printStackTrace();
+}
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -156,13 +133,13 @@ public class Register extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ratings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ratings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ratings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Ratings.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -172,7 +149,7 @@ public class Register extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Register().setVisible(true);
+                new Ratings().setVisible(true);
             }
         });
     }
@@ -183,8 +160,12 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField txtidnguoichoi;
-    private javax.swing.JTextField txttennguoichoi;
     // End of variables declaration//GEN-END:variables
+
+    private static class ResultSet {
+
+        public ResultSet() {
+        }
+    }
 }
