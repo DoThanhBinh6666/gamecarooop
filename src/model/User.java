@@ -11,120 +11,78 @@ package model;
  */
 public class User {
     private int ID;
-    private String username;
-    private String password;
-    private String nickname;
-    private int numberOfGame;
-    private int numberOfwin;
-    private int numberOfDraw;
-    private int rank;
+    private String ten_nguoi_choi;
+    private int diem;
+    private int so_tran_thang;
+    private int so_tran_thua;
+    private int so_tran;
+    
 
-    public User(int ID, String username, String password, String nickname, int numberOfGame, int numberOfwin, int numberOfDraw, int rank) {
+    public User(int ID, String ten_nguoi_choi, int diem, int so_tran_thang, int so_tran_thua, int so_tran) {
         this.ID = ID;
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-        this.numberOfGame = numberOfGame;
-        this.numberOfwin = numberOfwin;
-        this.numberOfDraw = numberOfDraw;
-        this.rank = rank;
+        this.ten_nguoi_choi = ten_nguoi_choi;
+        this.diem = diem;
+        this.so_tran_thang = so_tran_thang;
+        this.so_tran_thua = so_tran_thua;
+        this.so_tran = so_tran;
     }
 
-    public int getRank() {
-        return rank;
-    }
-
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
-
-
-    public User(int ID, String username, String password, String nickname, int numberOfGame, int numberOfwin, int numberOfDraw) {
+    public User(int ID, String ten_nguoi_choi) {
         this.ID = ID;
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-        this.numberOfGame = numberOfGame;
-        this.numberOfwin = numberOfwin;
-        this.numberOfDraw = numberOfDraw;
+        this.ten_nguoi_choi = ten_nguoi_choi;
     }
 
-    public User(int ID, String nickname) {
-        this.ID = ID;
-        this.nickname = nickname;
+    public int getSo_tran() {
+        return so_tran;
     }
 
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public void setSo_tran(int so_tran) {
+        this.so_tran = so_tran;
     }
-
-    public User(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-    }
+    
+    
 
     public int getID() {
         return ID;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public int getNumberOfGame() {
-        return numberOfGame;
-    }
-
-    public int getNumberOfwin() {
-        return numberOfwin;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    public void setNumberOfGame(int numberOfGame) {
-        this.numberOfGame = numberOfGame;
-    }
-
-    public void setNumberOfwin(int numberOfwin) {
-        this.numberOfwin = numberOfwin;
-    }
-
-    public User(int ID, String nickname, int numberOfGame, int numberOfDraw) {
+    public void setID(int ID) {
         this.ID = ID;
-        this.nickname = nickname;
-        this.numberOfGame = numberOfGame;
-        this.numberOfDraw = numberOfDraw;
     }
 
-    public int getNumberOfDraw() {
-        return numberOfDraw;
+    public String getTen_nguoi_choi() {
+        return ten_nguoi_choi;
     }
 
-    public void setNumberOfDraw(int numberOfDraw) {
-        this.numberOfDraw = numberOfDraw;
+    public void setTen_nguoi_choi(String ten_nguoi_choi) {
+        this.ten_nguoi_choi = ten_nguoi_choi;
     }
 
+    public int getDiem() {
+        return diem;
+    }
+
+    public void setDiem(int diem) {
+        this.diem = diem;
+    }
+
+    public int getSo_tran_thang() {
+        return so_tran_thang;
+    }
+
+    public void setSo_tran_thang(int so_tran_thang) {
+        this.so_tran_thang = so_tran_thang;
+    }
+
+    public int getSo_tran_thua() {
+        return so_tran_thua;
+    }
+
+    public void setSo_tran_thua(int so_tran_thua) {
+        this.so_tran_thua = so_tran_thua;
+    }
     
     
 }
+
+    

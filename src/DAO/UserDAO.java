@@ -27,23 +27,23 @@ public class UserDAO extends DAO{
     public User verifyUser(User user) {
         try {
             PreparedStatement preparedStatement = con.prepareStatement("SELECT *\n"
-                    + "FROM user\n"
-                    + "WHERE username = ?\n"
-                    + "AND password = ?");
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getPassword());
+                    + "FROM nguoi_choi\n"
+                    + "WHERE ten_nguoi_choi = ?\n"
+                    + "AND ID = ?");
+            preparedStatement.setInt(1, user.getID());
+            preparedStatement.setString(2, user.getTen_nguoi_choi());
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 return new User(rs.getInt(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
+                        rs.getInt(3),
+                        rs.getInt(4),
                         rs.getInt(5),
-                        rs.getInt(6),
-                        rs.getInt(7),
-                        getRank(rs.getInt(1)));    
-            }
+                        rs.getInt(6)
+                        
+                );
+                        }
             
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -54,21 +54,21 @@ public class UserDAO extends DAO{
 
     public User getUserByID(int ID) {
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM user\n"
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM nguoi_choi\n"
                     + "WHERE ID=?");
             preparedStatement.setInt(1, ID);
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
+             if (rs.next()) {
                 return new User(rs.getInt(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
+                        rs.getInt(3),
+                        rs.getInt(4),
                         rs.getInt(5),
-                        rs.getInt(6),
-                        rs.getInt(7),
-                        getRank(rs.getInt(1)));  
-            }
+                        rs.getInt(6)
+                        
+                );
+                        }
             
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -78,11 +78,10 @@ public class UserDAO extends DAO{
     }
     public void addUser(User user) {
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO user(username, password, nickname, avatar)\n"
-                    + "VALUES(?,?,?,?)");
-            preparedStatement.setString(1, user.getUsername());
-            preparedStatement.setString(2, user.getPassword());
-            preparedStatement.setString(3, user.getNickname());
+            PreparedStatement preparedStatement = con.prepareStatement("INSERT INTO nguoi_choi(ID, ten_nguoi_choi)\n"
+                    + "VALUES(?,?)");
+            preparedStatement.setInt(1, user.getID());
+            preparedStatement.setString(2, user.getTen_nguoi_choi());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException ex) {
@@ -90,48 +89,12 @@ public class UserDAO extends DAO{
         }
     }
     
-    public boolean checkDuplicated(String username){
-        try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT * FROM user WHERE username = ?");
-            preparedStatement.setString(1, username);
-            System.out.println(preparedStatement);
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                return true;
-            }
-            
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public int getRank(int ID) {
-        int rank = 1;
-        try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT user.ID\n"
-                    + "FROM user\n"
-                    + "ORDER BY (user.NumberOfGame+user.numberOfDraw*5+user.NumberOfWin*10) DESC");
-            ResultSet rs = preparedStatement.executeQuery();
-            while (rs.next()) {
-                if(rs.getInt(1)==ID)
-                    return rank;
-                rank++;
-            }
-            
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return -1;
-    }
     
-    public int getNumberOfWin(int ID) {
+    public int getSo_tran_thang(int ID) {
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT user.NumberOfWin\n"
-                    + "FROM user\n"
-                    + "WHERE user.ID = ?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT nguoi_choi.so_tran_thang\n"
+                    + "FROM nguoi_choi\n"
+                    + "WHERE nguoi_choi.ID = ?");
             preparedStatement.setInt(1, ID);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -179,7 +142,7 @@ public class UserDAO extends DAO{
             PreparedStatement preparedStatement = con.prepareStatement("UPDATE user\n"
                     + "SET user.NumberOfWin = ?\n"
                     + "WHERE user.ID = ?");
-            preparedStatement.setInt(1, new UserDAO().getNumberOfWin(ID)+1);
+            preparedStatement.setInt(1, new UserDAO().getSo_tran_thang(ID)+1);
             preparedStatement.setInt(2, ID);
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
