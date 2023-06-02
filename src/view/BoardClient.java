@@ -6,6 +6,7 @@ package view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+import control.Client;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -25,6 +26,8 @@ public final class BoardClient extends javax.swing.JFrame {
     static Integer idNguoiChoi1;
     static Integer idNguoiChoi2;
     static String tenNguoiChoi2;
+    public int score1 = 0;
+    public int score2 = 0;
     final int n = 19, m = 19;
     JButton[][] btn;
     JButton lastMove = null;
@@ -45,7 +48,6 @@ public final class BoardClient extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
-        lbTiso.setText(" 0 - 0 ");
         btn = new JButton[n + 2][m + 2];
 
         for (int row = 0; row < m; row++) {
@@ -66,6 +68,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.pink);
                             JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                            score1=score2+1;
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
                                     btn[i1][j1].setText("");
@@ -81,6 +84,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.green);
                             JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                            score2=score2+1;
                             JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
@@ -94,6 +98,10 @@ public final class BoardClient extends javax.swing.JFrame {
 
             }
         }
+    }
+    public void tangdiem(){
+        Client.user.setSo_tran_thang(Client.user.getSo_tran_thang()+1);
+        lbTiso.setText(score1 + "-" + score2);
     }
 
     //kiem tra thang 
@@ -203,13 +211,15 @@ public final class BoardClient extends javax.swing.JFrame {
 
         plBoardContainer = new javax.swing.JPanel();
         plScore = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         lbTiso = new javax.swing.JLabel();
         plPlayer = new javax.swing.JPanel();
         lbAvartar2 = new javax.swing.JLabel();
         lbAvartar1 = new javax.swing.JLabel();
         lbTen1 = new javax.swing.JLabel();
         lbTen2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jbUndo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -224,7 +234,6 @@ public final class BoardClient extends javax.swing.JFrame {
         plBoardContainer.setLayout(new java.awt.GridBagLayout());
 
         plScore.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Tỉ số", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
-        plScore.add(jLabel2);
 
         lbTiso.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lbTiso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -245,6 +254,15 @@ public final class BoardClient extends javax.swing.JFrame {
 
         lbTen2.setText("Linh");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/O3.png"))); // NOI18N
+        jLabel1.setText(" ");
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/X2.png"))); // NOI18N
+        jLabel2.setText(" ");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/swords-1.png"))); // NOI18N
+
         javax.swing.GroupLayout plPlayerLayout = new javax.swing.GroupLayout(plPlayer);
         plPlayer.setLayout(plPlayerLayout);
         plPlayerLayout.setHorizontalGroup(
@@ -256,24 +274,47 @@ public final class BoardClient extends javax.swing.JFrame {
                 .addComponent(lbAvartar2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(plPlayerLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(29, 29, 29)
+                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18))
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(14, 14, 14)
+                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
         plPlayerLayout.setVerticalGroup(
             plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plPlayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
                     .addComponent(lbAvartar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbTen1)
-                    .addComponent(lbTen2))
-                .addGap(60, 60, 60))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addComponent(lbTen1)
+                        .addGap(6, 6, 6))
+                    .addComponent(lbTen2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(plPlayerLayout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(11, 11, 11))
+                        .addGroup(plPlayerLayout.createSequentialGroup()
+                            .addGap(9, 9, 9)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
@@ -314,7 +355,7 @@ public final class BoardClient extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,11 +378,11 @@ public final class BoardClient extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(plBoardContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(plPlayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(plScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(plScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(plPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -432,7 +473,9 @@ public final class BoardClient extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbUndo;
     private javax.swing.JLabel lbAvartar1;
