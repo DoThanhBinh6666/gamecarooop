@@ -108,8 +108,6 @@ public final class BoardAI extends javax.swing.JFrame {
         lbAvartar1 = new javax.swing.JLabel();
         lbTen1 = new javax.swing.JLabel();
         lbTen2 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jbUndo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -164,12 +162,6 @@ public final class BoardAI extends javax.swing.JFrame {
 
         lbTen2.setText("Máy");
 
-        jProgressBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jProgressBar1.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-        jProgressBar1.setStringPainted(true);
-
-        jLabel1.setText("Thời gian:");
-
         javax.swing.GroupLayout plPlayerLayout = new javax.swing.GroupLayout(plPlayer);
         plPlayer.setLayout(plPlayerLayout);
         plPlayerLayout.setHorizontalGroup(
@@ -177,7 +169,7 @@ public final class BoardAI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbAvartar1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(lbAvartar2)
                 .addContainerGap())
             .addGroup(plPlayerLayout.createSequentialGroup()
@@ -186,12 +178,6 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
-                .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         plPlayerLayout.setVerticalGroup(
             plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,11 +190,7 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbTen1)
                     .addComponent(lbTen2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29))
+                .addGap(60, 60, 60))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
@@ -223,6 +205,11 @@ public final class BoardAI extends javax.swing.JFrame {
         });
 
         jButton3.setText("Trang chủ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         exit.setText("Thoát");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +287,12 @@ public final class BoardAI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+            for(int i = 0; i < Buttons.length; i++) {
+            for (int j = 0; j < Buttons.length; j++) {
+                Buttons[i][j].resetState();
+            }
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -307,6 +300,14 @@ public final class BoardAI extends javax.swing.JFrame {
         System.exit(0);
        
     }//GEN-LAST:event_exitActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Bạn muốn thoát?", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+        Home Home = new Home();
+        Home.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
  private void handleClickButton(Point point) {
 
         // TODO: CALC LOGIC HERE
@@ -891,9 +892,7 @@ public final class BoardAI extends javax.swing.JFrame {
     private javax.swing.JButton exit;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JTextField jTextArea1;
     private javax.swing.JButton jbUndo;
     private javax.swing.JLabel koten;

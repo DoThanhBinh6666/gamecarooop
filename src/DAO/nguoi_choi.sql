@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 31, 2023 lúc 10:51 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Thời gian đã tạo: Th6 02, 2023 lúc 05:48 AM
+-- Phiên bản máy phục vụ: 10.4.27-MariaDB
+-- Phiên bản PHP: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,21 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `nguoi_choi` (
   `ID` int(11) NOT NULL,
-  `ten_nguoi_choi` varchar(255) DEFAULT NULL,
-  `so_tran_thang` int(11) DEFAULT NULL,
-  `diem_so` int(11) DEFAULT NULL
+  `ten_nguoi_choi` varchar(255) NOT NULL,
+  `diem` int(11) NOT NULL,
+  `so_tran_thang` int(11) NOT NULL,
+  `so_tran_thua` int(11) NOT NULL,
+  `so_tran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoi_choi`
 --
 
-INSERT INTO `nguoi_choi` (`ID`, `ten_nguoi_choi`, `so_tran_thang`, `diem_so`) VALUES
-(123, 'linh', NULL, NULL),
-(2511, 'linhdaubuoi', NULL, NULL),
-(2710, 'binh123', NULL, NULL),
-(88888, 'linhdaubuoi', NULL, NULL),
-(25112003, 'lanhcuccut', NULL, NULL);
+INSERT INTO `nguoi_choi` (`ID`, `ten_nguoi_choi`, `diem`, `so_tran_thang`, `so_tran_thua`, `so_tran`) VALUES
+(123, 'linh', 0, 0, 0, 0),
+(2710, 'binh123', 0, 0, 0, 0),
+
+
 
 --
 -- Chỉ mục cho các bảng đã đổ

@@ -43,7 +43,6 @@ public class XOButton extends JButton {
                     @Override
                     public void mouseExited(MouseEvent e) {
                         if(_this.isEnabled()){
-                            _this.setBackground(null);
                             _this.setIcon(new ImageIcon("src/IMG/blank.png"));
                         }
                     }
@@ -51,7 +50,7 @@ public class XOButton extends JButton {
                     @Override
                     public void mouseEntered(MouseEvent e) {
                         if(_this.isEnabled()) {
-                            _this.setBackground(Color.ORANGE);
+                            
                             _this.setIcon(new ImageIcon("src/IMG/X1.png"));
                         }
                     }

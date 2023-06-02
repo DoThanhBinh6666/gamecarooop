@@ -68,9 +68,12 @@ public class Ratings extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 130, -1));
         getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 150, -1));
+
+        jLabel2.setText(" ");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 200));
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel3.setText("THÔNG TIN");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         pack();

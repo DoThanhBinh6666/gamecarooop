@@ -47,8 +47,8 @@ public class Register extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         txttennguoichoi = new javax.swing.JTextField();
         txtidnguoichoi = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,7 +69,7 @@ public class Register extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
         jButton2.setText("Thoát");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +77,7 @@ public class Register extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 87, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 87, -1));
 
         txttennguoichoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,8 +86,13 @@ public class Register extends javax.swing.JFrame {
         });
         getContentPane().add(txttennguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 119, -1));
         getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 120, -1));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 6, 37, -1));
+
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 180));
+
+        jLabel5.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
+        jLabel5.setText("ĐĂNG KÝ");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -182,8 +187,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPasswordField txtidnguoichoi;
     private javax.swing.JTextField txttennguoichoi;
     // End of variables declaration//GEN-END:variables

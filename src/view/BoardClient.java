@@ -7,6 +7,7 @@ package view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,8 +32,6 @@ public final class BoardClient extends javax.swing.JFrame {
 
     public BoardClient() {
         initComponents();
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // board
         plBoardContainer.setLayout(new GridLayout(m, n));
         initBoard();
@@ -46,6 +45,7 @@ public final class BoardClient extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setResizable(false);
+        lbTiso.setText(" 0 - 0 ");
         btn = new JButton[n + 2][m + 2];
 
         for (int row = 0; row < m; row++) {
@@ -61,9 +61,10 @@ public final class BoardClient extends javax.swing.JFrame {
                     if (diem % 2 == 0) {
                         btn[i][j].setText("X");
                         btn[i][j].setForeground(Color.RED);
+                        btn[i][j].setFont(new Font("Arial", Font.BOLD, 12));
                         diem++;
                         if (win(i, j, btn[i][j].getText())) {
-                            btn[i][j].setBackground(Color.red);
+                            btn[i][j].setBackground(Color.pink);
                             JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
@@ -74,7 +75,8 @@ public final class BoardClient extends javax.swing.JFrame {
                         }
                     } else {
                         btn[i][j].setText("O");
-                        btn[i][j].setForeground(Color.BLACK);
+                        btn[i][j].setForeground(Color.blue);
+                        btn[i][j].setFont(new Font("Arial", Font.BOLD, 12));
                         diem++;
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.green);
@@ -88,7 +90,6 @@ public final class BoardClient extends javax.swing.JFrame {
                             }
                         }
                     }
-//                JOptionPane.showMessageDialog(this, i + " " + j);
                 }
 
             }
@@ -202,16 +203,13 @@ public final class BoardClient extends javax.swing.JFrame {
 
         plBoardContainer = new javax.swing.JPanel();
         plScore = new javax.swing.JPanel();
-        lbPlayer1 = new javax.swing.JLabel();
-        koten = new javax.swing.JLabel();
-        lbPlayer2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lbTiso = new javax.swing.JLabel();
         plPlayer = new javax.swing.JPanel();
         lbAvartar2 = new javax.swing.JLabel();
         lbAvartar1 = new javax.swing.JLabel();
         lbTen1 = new javax.swing.JLabel();
         lbTen2 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jbUndo = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -222,33 +220,16 @@ public final class BoardClient extends javax.swing.JFrame {
         setTitle("Game Caro");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        javax.swing.GroupLayout plBoardContainerLayout = new javax.swing.GroupLayout(plBoardContainer);
-        plBoardContainer.setLayout(plBoardContainerLayout);
-        plBoardContainerLayout.setHorizontalGroup(
-            plBoardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 742, Short.MAX_VALUE)
-        );
-        plBoardContainerLayout.setVerticalGroup(
-            plBoardContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
+        plBoardContainer.setBorder(null);
+        plBoardContainer.setLayout(new java.awt.GridBagLayout());
 
         plScore.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Tỉ số", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
+        plScore.add(jLabel2);
 
-        lbPlayer1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPlayer1.setText("0");
-        plScore.add(lbPlayer1);
-
-        koten.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        koten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        koten.setText("-");
-        plScore.add(koten);
-
-        lbPlayer2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbPlayer2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPlayer2.setText("0");
-        plScore.add(lbPlayer2);
+        lbTiso.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbTiso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbTiso.setText(" ");
+        plScore.add(lbTiso);
 
         plPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Người chơi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
@@ -264,51 +245,35 @@ public final class BoardClient extends javax.swing.JFrame {
 
         lbTen2.setText("Linh");
 
-        jProgressBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jProgressBar1.setDebugGraphicsOptions(javax.swing.DebugGraphics.FLASH_OPTION);
-        jProgressBar1.setStringPainted(true);
-
-        jLabel1.setText("Thời gian:");
-
         javax.swing.GroupLayout plPlayerLayout = new javax.swing.GroupLayout(plPlayer);
         plPlayer.setLayout(plPlayerLayout);
         plPlayerLayout.setHorizontalGroup(
             plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbAvartar1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbAvartar1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lbAvartar2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(plPlayerLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         plPlayerLayout.setVerticalGroup(
             plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plPlayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
                     .addComponent(lbAvartar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbTen1)
                     .addComponent(lbTen2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29))
+                .addGap(60, 60, 60))
         );
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
@@ -323,8 +288,18 @@ public final class BoardClient extends javax.swing.JFrame {
         });
 
         jButton3.setText("Trang chủ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Thoát");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -361,8 +336,8 @@ public final class BoardClient extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(plBoardContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plBoardContainer, javax.swing.GroupLayout.PREFERRED_SIZE, 875, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(plPlayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -378,8 +353,8 @@ public final class BoardClient extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(plScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addComponent(plPlayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -392,7 +367,29 @@ public final class BoardClient extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+            for (int i1 = 0; i1 < n; i1++) {
+                for (int j1 = 0; j1 < m; j1++) {
+                    btn[i1][j1].setText("");
+                    btn[i1][j1].setBackground(Color.white);
+                }
+            }
+            
+ 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Bạn muốn thoát?", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+        Home Home = new Home();
+        Home.setVisible(true);
+    this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton4ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -420,69 +417,7 @@ public final class BoardClient extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(BoardClient.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -497,17 +432,14 @@ public final class BoardClient extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JButton jbUndo;
-    private javax.swing.JLabel koten;
     private javax.swing.JLabel lbAvartar1;
     private javax.swing.JLabel lbAvartar2;
-    private javax.swing.JLabel lbPlayer1;
-    private javax.swing.JLabel lbPlayer2;
     private javax.swing.JLabel lbTen1;
     private javax.swing.JLabel lbTen2;
+    private javax.swing.JLabel lbTiso;
     private javax.swing.JPanel plBoardContainer;
     private javax.swing.JPanel plPlayer;
     private javax.swing.JPanel plScore;

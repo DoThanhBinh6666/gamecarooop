@@ -106,11 +106,11 @@ public class UserDAO extends DAO{
         }
         return -1;
     }
-    public int getNumberOfDraw(int ID) {
+    public int getSo_tran_thua(int ID) {
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT user.NumberOfDraw\n"
-                    + "FROM user\n"
-                    + "WHERE user.ID = ?");
+            PreparedStatement preparedStatement = con.prepareStatement("SELECT nguoi_choi.so_tran_thua\n"
+                    + "FROM nguoi_choi\n"
+                    + "WHERE nguoi_choi.ID = ?");
             preparedStatement.setInt(1, ID);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -123,12 +123,12 @@ public class UserDAO extends DAO{
         return -1;
     }
     
-    public void addDrawGame(int ID){
+    public void addSo_tran_thua(int ID){
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("UPDATE user\n"
-                    + "SET user.NumberOfDraw = ?\n"
-                    + "WHERE user.ID = ?");
-            preparedStatement.setInt(1, new UserDAO().getNumberOfDraw(ID)+1);
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE nguoi_choi\n"
+                    + "SET nguoi_choi.So_tran_thua = ?\n"
+                    + "WHERE nguoi_choi.ID = ?");
+            preparedStatement.setInt(1, new UserDAO().getSo_tran_thua(ID)+1);
             preparedStatement.setInt(2, ID);
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
@@ -139,9 +139,9 @@ public class UserDAO extends DAO{
     
     public void addWinGame(int ID){
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("UPDATE user\n"
-                    + "SET user.NumberOfWin = ?\n"
-                    + "WHERE user.ID = ?");
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE nguoi_choi\n"
+                    + "SET nguoi_choi.so_tran_thang = ?\n"
+                    + "WHERE nguoi_choi.ID = ?");
             preparedStatement.setInt(1, new UserDAO().getSo_tran_thang(ID)+1);
             preparedStatement.setInt(2, ID);
             System.out.println(preparedStatement);
@@ -151,11 +151,11 @@ public class UserDAO extends DAO{
         }
     }
     
-    public int getNumberOfGame(int ID) {
+    public int getSo_tran(int ID) {
         try {
             PreparedStatement preparedStatement = con.prepareStatement("SELECT user.NumberOfGame\n"
-                    + "FROM user\n"
-                    + "WHERE user.ID = ?");
+                    + "FROM nguoi_choi\n"
+                    + "WHERE nguoi_choi.ID = ?");
             preparedStatement.setInt(1, ID);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -170,10 +170,10 @@ public class UserDAO extends DAO{
 
     public void addGame(int ID) {
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("UPDATE user\n"
-                    + "SET user.NumberOfGame = ?\n"
-                    + "WHERE user.ID = ?");
-            preparedStatement.setInt(1, new UserDAO().getNumberOfGame(ID) + 1);
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE nguoi_choi\n"
+                    + "SET nguoi_choi.so_tran_thang = ?\n"
+                    + "WHERE nguoi_choi.ID = ?");
+            preparedStatement.setInt(1, new UserDAO().getSo_tran_thang(ID) + 1);
             preparedStatement.setInt(2, ID);
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
@@ -183,10 +183,10 @@ public class UserDAO extends DAO{
     }
     public void decreaseGame(int ID){
         try {
-            PreparedStatement preparedStatement = con.prepareStatement("UPDATE user\n"
-                    + "SET user.NumberOfGame = ?\n"
-                    + "WHERE user.ID = ?");
-            preparedStatement.setInt(1, new UserDAO().getNumberOfGame(ID) - 1);
+            PreparedStatement preparedStatement = con.prepareStatement("UPDATE nguoi_choi\n"
+                    + "SET nguoi_choi.so_tran_thang = ?\n"
+                    + "WHERE nguoi_choi.ID = ?");
+            preparedStatement.setInt(1, new UserDAO().getSo_tran_thang(ID) - 1);
             preparedStatement.setInt(2, ID);
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
@@ -195,21 +195,6 @@ public class UserDAO extends DAO{
         }
     }
 
-    public String getNickNameByID(int ID) {
-        try {
-            PreparedStatement preparedStatement = con.prepareStatement("SELECT user.NickName\n"
-                    + "FROM user\n"
-                    + "WHERE user.ID=?");
-            preparedStatement.setInt(1, ID);
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                return rs.getString(1);
-            }
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return null;
-    }
+   
     
 }

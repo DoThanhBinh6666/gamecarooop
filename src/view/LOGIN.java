@@ -37,7 +37,6 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         txtmatkhau = new javax.swing.JPasswordField();
         txtdangnhap = new javax.swing.JTextField();
@@ -52,12 +51,6 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON-LOGIN2.png"))); // NOI18N
-        jButton2.setText(" ĐĂNG KÍ ");
-        jButton2.setName("jButton2"); // NOI18N
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 140, -1));
-
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON-LOGIN1.jpg"))); // NOI18N
         jButton1.setText("ĐĂNG NHẬP ");
@@ -67,7 +60,7 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 160, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 160, -1));
 
         txtmatkhau.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtmatkhau.setName("txtmatkhau"); // NOI18N
@@ -161,7 +154,6 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
