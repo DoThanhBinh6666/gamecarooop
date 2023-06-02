@@ -127,8 +127,7 @@ public class Home extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(rootPane, "Luật chơi: luật quốc tế 5 nước chặn 2 đầu\n"
                 + "Hai người chơi luân phiên nhau chơi trước\n"
                 + "Người chơi trước đánh X, người chơi sau đánh O\n"
-                + "Với mỗi ván chơi bạn có thêm 1 điểm, nếu hòa bạn được thêm 5 điểm,\n"
-                + "nếu thắng bạn được thêm 10 điểm\n"
+                + "Với mỗi ván chơi thắng bạn có thêm 20 điểm, nếu hòa bạn được thêm -10 điểm,\n"
                 + "Chúc bạn chơi game vui vẻ <3");
                                              
     }//GEN-LAST:event_jButton6ActionPerformed

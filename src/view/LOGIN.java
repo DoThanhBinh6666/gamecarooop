@@ -81,7 +81,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 130, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_trollface_96px.png"))); // NOI18N
         jLabel2.setText("ĐĂNG NHẬP");
         jLabel2.setName("jLabel2"); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 160, 80));

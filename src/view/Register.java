@@ -139,7 +139,7 @@ public class Register extends javax.swing.JFrame {
 
     try (Connection conn = DriverManager.getConnection(url, username, password)) {
         // Chuẩn bị truy vấn chèn dữ liệu
-        String query = "INSERT INTO nguoi_choi (ten_nguoi_choi, ID) VALUES (?, ?)";
+        String query = "INSERT INTO nguoi_choi (ten_nguoi_choi, ID, diem_so, so_tran_thang, so_tran) VALUES (?, ?, 0,0,0)";
         PreparedStatement statement = conn.prepareStatement(query);
    
         // Thiết lập giá trị cho các tham số của truy vấn
@@ -151,7 +151,7 @@ public class Register extends javax.swing.JFrame {
 
         // In ra thông báo nếu chèn dữ liệu thành công
         if (rowsInserted > 0) {
-            System.out.println("Thêm thành công,sẵn sàng thịt mấy con gà thôi nào");
+            System.out.println("Them thanh cong");
         }
 
     } catch (SQLException e) {
