@@ -114,7 +114,6 @@ public final class BoardAI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         exit = new javax.swing.JButton();
-        jTextArea1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Game Caro");
@@ -247,20 +246,15 @@ public final class BoardAI extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setText(" ");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextArea1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(22, 22, 22)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jButton3)
+                .addGap(22, 22, 22)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -276,8 +270,7 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(exit))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -344,7 +337,7 @@ public final class BoardAI extends javax.swing.JFrame {
         if (getScore(getMatrixBoard(), true, false) >= winScore) {
             JOptionPane.showMessageDialog(null, "Bạn đã thắng");
             userWin++;
-            displayUserWin();
+            displayWin();
             newGame();
             return;
         }
@@ -361,7 +354,7 @@ public final class BoardAI extends javax.swing.JFrame {
         if (getScore(getMatrixBoard(), false, true) >= winScore) {
             JOptionPane.showMessageDialog(null, "Bạn đã thua");
             aIWin++;
-            displayAIWin();
+            displayWin();
             newGame();
         }
     }
@@ -389,25 +382,10 @@ public final class BoardAI extends javax.swing.JFrame {
         }
     }
     
-    private void displayUserWin(){
-        String tmp = jTextArea1.getText();
-        tmp+="-Bạn đã thắng";
-        jTextArea1.setText(tmp);
-        jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+    private void displayWin(){
         String e = jTextField1.getText();
-        e=userWin+"-"+aIWin;
+        e=userWin+" - "+aIWin;
         jTextField1.setText(e);
-    }
-    private void displayAIWin(){
-        String tmp = jTextArea1.getText();
-        tmp+="-Máy thắng";
-        jTextArea1.setText(tmp);
-        jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
-        String e = jTextField1.getText();
-        e=userWin+"-"+aIWin;
-        jTextField1.setText(e);
-        jTextArea1.setText(tmp);
-        jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
     }
     
     
@@ -932,7 +910,6 @@ public final class BoardAI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextArea1;
     private javax.swing.JLabel jTextField1;
     private javax.swing.JLabel lbAvartar1;
     private javax.swing.JLabel lbAvartar2;
