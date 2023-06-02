@@ -43,17 +43,17 @@ public class Graft extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Người Chơi 1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 95, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 95, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Người Chơi 2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 88, -1));
-        getContentPane().add(txttennguoichoi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 86, 140, -1));
-        getContentPane().add(txttennguoichoi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 86, 140, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, 100, -1));
+        getContentPane().add(txttennguoichoi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 120, -1));
+        getContentPane().add(txttennguoichoi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 130, -1));
 
         txtbatdau.setText("Bắt Đầu ");
         txtbatdau.addActionListener(new java.awt.event.ActionListener() {
@@ -61,9 +61,9 @@ public class Graft extends javax.swing.JFrame {
                 txtbatdauActionPerformed(evt);
             }
         });
-        getContentPane().add(txtbatdau, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 93, -1));
-        getContentPane().add(txtid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 120, 140, -1));
-        getContentPane().add(txtid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 120, 140, -1));
+        getContentPane().add(txtbatdau, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 93, -1));
+        getContentPane().add(txtid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 120, -1));
+        getContentPane().add(txtid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 130, -1));
 
         jButton2.setText("Thoát");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -71,16 +71,20 @@ public class Graft extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 117, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 90, -1));
 
+        jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tên Người Chơi");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 89, 91, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 91, -1));
 
+        jLabel4.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("ID");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 48, -1));
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 240));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 48, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/graft.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 380, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
