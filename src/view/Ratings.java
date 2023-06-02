@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 /**
  *
  * @author binh0
@@ -93,17 +95,6 @@ public class Ratings extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      String ID= txtidnguoichoi.getText();
-     
-     if (ID.length() > 6) {
-        JOptionPane.showMessageDialog(null, "ID không được vượt quá 6 ký tự.");
-    } else {
-        // xử lý khi ID hợp lệ
-    }
-     
-     if (ID.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Vui lòng nhập ID");
-        return;
-    }
 
     // Kiểm tra xem giá trị của trường idNguoiChoi có phải là số không âm hay không
     if (!ID.matches("\\d+")) {
@@ -118,27 +109,53 @@ public class Ratings extends javax.swing.JFrame {
 
     try (Connection conn = DriverManager.getConnection(url, username, password)) {
  
-    String query = "SELECT so_tran_thang,diem_so FROM nguoi_choi WHERE ID = ?";
-    PreparedStatement statement = conn.prepareStatement(query);
+        // Tạo câu truy vấn SQL để lấy thông tin người chơi theo ID
+        String query1 = "SELECT so_tran_thang, diem_so FROM nguoi_choi WHERE ID = ?";
+        PreparedStatement statement1 = conn.prepareStatement(query1);
 
-    // Thiết lập giá trị cho các tham số của truy vấn
-    statement.setInt(1, Integer.parseInt(ID));
+        // Thiết lập giá trị cho các tham số của truy vấn
+        statement1.setInt(1, Integer.parseInt(ID));
 
-    // Thực thi truy vấn và lấy kết quả
-   java.sql.ResultSet rs = statement.executeQuery();
+        // Thực thi truy vấn và lấy kết quả
+        java.sql.ResultSet rs1 = statement1.executeQuery();
 
-    // Lấy dữ liệu từ ResultSet và hiển thị chúng trên giao diện người dùng
-    if (rs.next()) {
-        int so_tran_thang = rs.getInt("so_tran_thang");
-        int diem_so = rs.getInt("diem_so");
-        JOptionPane.showMessageDialog(this, "Số trận thắng: " + so_tran_thang + "\nĐiểm số: " + diem_so);
-    } else {
-        JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin người chơi với ID: " + ID);      
-    }//GEN-LAST:event_jButton1ActionPerformed
+        // Lấy dữ liệu từ ResultSet và hiển thị chúng trên giao diện người dùng
+        if (rs1.next()) {
+            int so_tran_thang = rs1.getInt("so_tran_thang");
+            int diem_so = rs1.getInt("diem_so");
+            JOptionPane.showMessageDialog(this, "Số trận thắng: " + so_tran_thang + "\nĐiểm số: " + diem_so);
+        } else {
+            JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin người chơi với ID: " + ID);      
+        } 
+
+        // Tạo câu truy vấn SQL để lấy danh sách các người chơi theo thứ tự giảm dần của điểm số
+        String query2 = "SELECT ten_nguoi_choi, diem_so FROM nguoi_choi ORDER BY diem_so DESC";
+        PreparedStatement statement2 = conn.prepareStatement(query2);
+
+        // Thực thi truy vấn và lấy kết quả
+        java.sql.ResultSet rs2 = statement2.executeQuery();
+
+        // Tạo một bảng để hiển thị danh sách các người chơi theo thứ tự giảm dần của điểm số
+    // Tạo một bảng để hiển thị danh sách các người chơi theo thứ tự giảm dần của điểm số
+String[] columnNames = {"Thứ tự", "Tên người chơi", "Điểm số"};
+Object[][] data = new Object[10][3];
+int i = 0;
+int rank = 1;
+while (rs2.next() && i < 10) {
+    data[i][0] = rank++;
+    data[i][1] = rs2.getString("ten_nguoi_choi");
+    data[i][2] = rs2.getInt("diem_so");
+    i++;
+}
+JTable table = new JTable(data, columnNames);
+JScrollPane scrollPane = new JScrollPane(table);
+JOptionPane.showMessageDialog(this, scrollPane, "Xếp hạng người chơi", JOptionPane.PLAIN_MESSAGE );
+
 } catch (SQLException e) {
     e.printStackTrace();
 }
-    }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
