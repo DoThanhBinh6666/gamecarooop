@@ -6,7 +6,7 @@ package view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-import control.Client;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -16,6 +16,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 /**
  *
@@ -32,10 +35,20 @@ public final class BoardClient extends javax.swing.JFrame {
     JButton[][] btn;
     JButton lastMove = null;
     public int diem = 0;
+    public int currentPlayer = 1;
 
     public BoardClient() {
         initComponents();
         // board
+        String[] options = {"Người chơi 1", "Người chơi 2"};
+        int result = JOptionPane.showOptionDialog(this, "Chọn người chơi đi trước", "Bắt đầu trận đấu", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+        if (result == JOptionPane.YES_OPTION) {
+            currentPlayer = 1;
+            JOptionPane.showMessageDialog(null, "Người chơi 1 đi trước");
+        } else {
+            currentPlayer = 2;
+            JOptionPane.showMessageDialog(null, "Người chơi 2 đi trước");
+        }
         plBoardContainer.setLayout(new GridLayout(m, n));
         initBoard();
 
@@ -68,6 +81,55 @@ public final class BoardClient extends javax.swing.JFrame {
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.pink);
                             JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "Người chơi 1 thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                                            if (currentPlayer == 1) {
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so + 20, so_tran_thang = so_tran_thang + 1 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi1);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so - 10 WHERE id = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi2);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                            } else {
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so + 20, so_tran_thang = so_tran_thang + 1 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi2);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so - 10 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi1);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                            }
+
                             tangdiem1();
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
@@ -86,6 +148,52 @@ public final class BoardClient extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                             tangdiem2();
                             JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
+                            if (currentPlayer == 1) {
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so + 20, so_tran_thang = so_tran_thang + 1 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi1);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so - 10 WHERE id = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi2);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                            } else {
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so + 20, so_tran_thang = so_tran_thang + 1 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi2);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }
+                                                try {
+                                                    java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/doangame", "root", "");
+                                                    String updateQuery = "UPDATE nguoi_choi SET diem_so = diem_so - 10 WHERE ID = ?";
+                                                    PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+                                                    pstmt.setInt(1, idNguoiChoi1);
+                                                    pstmt.executeUpdate();
+                                                    pstmt.close();
+                                                    conn.close();
+                                                } catch (SQLException ex) {
+                                                    ex.printStackTrace();
+                                                }}
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
                                     btn[i1][j1].setText("");
@@ -93,6 +201,7 @@ public final class BoardClient extends javax.swing.JFrame {
                                 }
                             }
                         }
+                        currentPlayer = 1;
                     }
                 }
 
