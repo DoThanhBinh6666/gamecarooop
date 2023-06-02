@@ -73,14 +73,13 @@ public final class BoardClient extends javax.swing.JFrame {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (e.getSource() == btn[i][j] && !"X".equals(btn[i][j].getText()) && !"O".equals(btn[i][j].getText())) {
-                    if (diem % 2 == 0) {
+                    if (currentPlayer == 1) {
                         btn[i][j].setText("X");
                         btn[i][j].setForeground(Color.RED);
                         btn[i][j].setFont(new Font("Arial", Font.BOLD, 12));
                         diem++;
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.pink);
-                            JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                             JOptionPane.showMessageDialog(null, "Người chơi 1 thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                                             if (currentPlayer == 1) {
                                                 try {
@@ -138,6 +137,7 @@ public final class BoardClient extends javax.swing.JFrame {
                                 }
                             }
                         }
+                        currentPlayer = 2;
                     } else {
                         btn[i][j].setText("O");
                         btn[i][j].setForeground(Color.blue);
@@ -145,7 +145,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         diem++;
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.green);
-                            JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "Người chơi 2 thắng!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
                             tangdiem2();
                             JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
                             if (currentPlayer == 1) {
@@ -414,9 +414,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18))
-                    .addGroup(plPlayerLayout.createSequentialGroup()
-                        .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14)
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -437,8 +435,8 @@ public final class BoardClient extends javax.swing.JFrame {
                         .addGap(6, 6, 6))
                     .addComponent(lbTen2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addGroup(plPlayerLayout.createSequentialGroup()
+                    .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addGap(11, 11, 11))
                         .addGroup(plPlayerLayout.createSequentialGroup()

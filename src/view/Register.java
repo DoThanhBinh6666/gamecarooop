@@ -98,6 +98,9 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    int confirmed = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát", JOptionPane.YES_NO_OPTION);
+
+    if (confirmed == JOptionPane.YES_OPTION); 
       Home homeFrame = new Home(); // tạo một đối tượng JFrame mới
       homeFrame.setVisible(true); // hiển thị JFrame mới
       this.dispose(); // đóng JFrame hiện tại
@@ -110,6 +113,16 @@ public class Register extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     String ten_nguoi_choi= txttennguoichoi.getText();
     String ID = txtidnguoichoi.getText();
+    
+    if (ID.length() > 6 && ten_nguoi_choi.length()>10) {
+        JOptionPane.showMessageDialog(null, "ID không được vượt quá 6 ký tự và tên người chơi không được vượt quá 10 ký tự");
+    } else {
+        // xử lý khi ID hợp lệ
+    }
+    if (ten_nguoi_choi.isEmpty() || ID.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Vui lòng nhập tên người chơi vs ID");
+        return;
+    }
 
     // Kiểm tra xem giá trị của trường idNguoiChoi có phải là số không âm hay không
     if (!ID.matches("\\d+")) {
