@@ -101,9 +101,7 @@ public final class BoardAI extends javax.swing.JFrame {
 
         plBoardContainer = new javax.swing.JPanel();
         plScore = new javax.swing.JPanel();
-        lbPlayer1 = new javax.swing.JLabel();
-        koten = new javax.swing.JLabel();
-        lbPlayer2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JLabel();
         plPlayer = new javax.swing.JPanel();
         lbAvartar2 = new javax.swing.JLabel();
         lbAvartar1 = new javax.swing.JLabel();
@@ -137,20 +135,22 @@ public final class BoardAI extends javax.swing.JFrame {
 
         plScore.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Tỉ số", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
-        lbPlayer1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPlayer1.setText("0");
-        plScore.add(lbPlayer1);
+        jTextField1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        koten.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
-        koten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        koten.setText("-");
-        plScore.add(koten);
-
-        lbPlayer2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbPlayer2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPlayer2.setText("0");
-        plScore.add(lbPlayer2);
+        javax.swing.GroupLayout plScoreLayout = new javax.swing.GroupLayout(plScore);
+        plScore.setLayout(plScoreLayout);
+        plScoreLayout.setHorizontalGroup(
+            plScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(plScoreLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        plScoreLayout.setVerticalGroup(
+            plScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+        );
 
         plPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Người chơi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
@@ -306,10 +306,10 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(plBoardContainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(plScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(plScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(plPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -399,13 +399,22 @@ public final class BoardAI extends javax.swing.JFrame {
         tmp+="-Bạn đã thắng";
         jTextArea1.setText(tmp);
         jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+        String e = jTextField1.getText();
+        e=userWin+"-"+aIWin;
+        jTextField1.setText(e);
     }
     private void displayAIWin(){
         String tmp = jTextArea1.getText();
         tmp+="-Máy thắng";
         jTextArea1.setText(tmp);
         jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
+        String e = jTextField1.getText();
+        e=userWin+"-"+aIWin;
+        jTextField1.setText(e);
+        jTextArea1.setText(tmp);
+        jTextArea1.setCaretPosition(jTextArea1.getDocument().getLength());
     }
+    
     
 
     public int[] calcNextMove(int depth) {
@@ -929,12 +938,10 @@ public final class BoardAI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextArea1;
+    private javax.swing.JLabel jTextField1;
     private javax.swing.JButton jbUndo;
-    private javax.swing.JLabel koten;
     private javax.swing.JLabel lbAvartar1;
     private javax.swing.JLabel lbAvartar2;
-    private javax.swing.JLabel lbPlayer1;
-    private javax.swing.JLabel lbPlayer2;
     private javax.swing.JLabel lbTen1;
     private javax.swing.JLabel lbTen2;
     private javax.swing.JPanel plBoardContainer;

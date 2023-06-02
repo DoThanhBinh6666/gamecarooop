@@ -68,7 +68,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.pink);
                             JOptionPane.showMessageDialog(null, "X win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
-                            score1=score2+1;
+                            tangdiem1();
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
                                     btn[i1][j1].setText("");
@@ -84,7 +84,7 @@ public final class BoardClient extends javax.swing.JFrame {
                         if (win(i, j, btn[i][j].getText())) {
                             btn[i][j].setBackground(Color.green);
                             JOptionPane.showMessageDialog(null, "O win!", "Game Over!", JOptionPane.INFORMATION_MESSAGE);
-                            score2=score2+1;
+                            tangdiem2();
                             JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
                             for (int i1 = 0; i1 < n; i1++) {
                                 for (int j1 = 0; j1 < m; j1++) {
@@ -99,9 +99,18 @@ public final class BoardClient extends javax.swing.JFrame {
             }
         }
     }
-    public void tangdiem(){
-        Client.user.setSo_tran_thang(Client.user.getSo_tran_thang()+1);
-        lbTiso.setText(score1 + "-" + score2);
+    public void tangdiem1(){
+        score1++;
+        lbTiso1.setText(score1 + "-" + score2);
+        String e = lbTiso1.getText();
+        lbTiso1.setText(e);
+    }
+    public void tangdiem2(){
+        score2++;
+        lbTiso1.setText(score1 + "-" + score2);
+        String e = lbTiso1.getText();
+        lbTiso1.setText(e);
+        
     }
 
     //kiem tra thang 
@@ -211,7 +220,7 @@ public final class BoardClient extends javax.swing.JFrame {
 
         plBoardContainer = new javax.swing.JPanel();
         plScore = new javax.swing.JPanel();
-        lbTiso = new javax.swing.JLabel();
+        lbTiso1 = new javax.swing.JLabel();
         plPlayer = new javax.swing.JPanel();
         lbAvartar2 = new javax.swing.JLabel();
         lbAvartar1 = new javax.swing.JLabel();
@@ -235,10 +244,25 @@ public final class BoardClient extends javax.swing.JFrame {
 
         plScore.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Tỉ số", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
-        lbTiso.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        lbTiso.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTiso.setText(" ");
-        plScore.add(lbTiso);
+        lbTiso1.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        lbTiso1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbTiso1.setText(" ");
+
+        javax.swing.GroupLayout plScoreLayout = new javax.swing.GroupLayout(plScore);
+        plScore.setLayout(plScoreLayout);
+        plScoreLayout.setHorizontalGroup(
+            plScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(plScoreLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(lbTiso1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        plScoreLayout.setVerticalGroup(
+            plScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(plScoreLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbTiso1))
+        );
 
         plPlayer.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Người chơi", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
@@ -295,7 +319,7 @@ public final class BoardClient extends javax.swing.JFrame {
             .addGroup(plPlayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                    .addComponent(lbAvartar1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
                     .addComponent(lbAvartar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,7 +506,7 @@ public final class BoardClient extends javax.swing.JFrame {
     private javax.swing.JLabel lbAvartar2;
     private javax.swing.JLabel lbTen1;
     private javax.swing.JLabel lbTen2;
-    private javax.swing.JLabel lbTiso;
+    private javax.swing.JLabel lbTiso1;
     private javax.swing.JPanel plBoardContainer;
     private javax.swing.JPanel plPlayer;
     private javax.swing.JPanel plScore;
