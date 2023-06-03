@@ -160,7 +160,7 @@ public final class BoardAI extends javax.swing.JFrame {
         lbAvartar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1 (1).png"))); // NOI18N
         lbAvartar1.setBorder(null);
 
-        lbTen1.setText("Bình");
+        lbTen1.setText("Người chơi");
 
         lbTen2.setText("Máy");
 
@@ -181,24 +181,21 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(lbAvartar2)
                 .addContainerGap())
-            .addGroup(plPlayerLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(plPlayerLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, plPlayerLayout.createSequentialGroup()
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(plPlayerLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                        .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23))
-                    .addGroup(plPlayerLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(lbTen1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbTen2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23))
         );
         plPlayerLayout.setVerticalGroup(
             plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,9 +211,10 @@ public final class BoardAI extends javax.swing.JFrame {
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(plPlayerLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel2))
                     .addGroup(plPlayerLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)))
