@@ -151,10 +151,12 @@ public class Register extends javax.swing.JFrame {
 
         // In ra thông báo nếu chèn dữ liệu thành công
         if (rowsInserted > 0) {
-            System.out.println("Them thanh cong");
-        }
-
-    } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "them thanh cong!");
+        }        
+    }
+    
+    catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "ID bị trùng");
         e.printStackTrace();
     }   
     }//GEN-LAST:event_jButton1ActionPerformed

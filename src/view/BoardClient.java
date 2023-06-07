@@ -313,8 +313,6 @@ public final class BoardClient extends javax.swing.JFrame {
         b.setFocusPainted(false);
         b.setBackground(new Color(180, 180, 180));
         b.setActionCommand("");
-        // test
-        // addPoint(row, column, "");
         return b;
     }
 
