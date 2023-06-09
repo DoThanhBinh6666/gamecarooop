@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 02, 2023 lúc 05:48 AM
+-- Thời gian đã tạo: Th6 09, 2023 lúc 03:25 PM
 -- Phiên bản máy phục vụ: 10.4.27-MariaDB
 -- Phiên bản PHP: 8.1.12
 
@@ -30,21 +30,30 @@ SET time_zone = "+00:00";
 CREATE TABLE `nguoi_choi` (
   `ID` int(11) NOT NULL,
   `ten_nguoi_choi` varchar(255) NOT NULL,
-  `diem` int(11) NOT NULL,
-  `so_tran_thang` int(11) NOT NULL,
-  `so_tran_thua` int(11) NOT NULL,
-  `so_tran` int(11) NOT NULL
+  `diem_so` int(11) NOT NULL,
+  `so_tran_thang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nguoi_choi`
 --
 
-INSERT INTO `nguoi_choi` (`ID`, `ten_nguoi_choi`, `diem`, `so_tran_thang`, `so_tran_thua`, `so_tran`) VALUES
-(123, 'linh', 0, 0, 0, 0),
-(2710, 'binh123', 0, 0, 0, 0),
-
-
+INSERT INTO `nguoi_choi` (`ID`, `ten_nguoi_choi`, `diem_so`, `so_tran_thang`) VALUES
+(123, 'linh', 150, 9),
+(304, 'lyiulan', 10, 1),
+(987, 'nguoichoi', 0, 0),
+(1901, 'thanhbinh', 0, 0),
+(2511, 'lananh', 40, 5),
+(2709, 'duc', 0, 0),
+(2710, 'binh123', -40, 3),
+(3858, 'lananh', 0, 0),
+(7654, 'lan', 0, 0),
+(8740, 'lananh', 0, 0),
+(9453, 'ly', 0, 0),
+(29111, 'them', 0, 0),
+(1234556, 'binh', 0, 0),
+(25112003, 'lan anh', 10, 1),
+(27102003, 'binh123', 10, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ

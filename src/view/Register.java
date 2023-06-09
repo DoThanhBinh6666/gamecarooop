@@ -116,8 +116,8 @@ public class Register extends javax.swing.JFrame {
     String ten_nguoi_choi= txttennguoichoi.getText();
     String ID = txtidnguoichoi.getText();
     
-    if (ID.length() > 6 && ten_nguoi_choi.length()>10) {
-        JOptionPane.showMessageDialog(null, "ID không được vượt quá 6 ký tự và tên người chơi không được vượt quá 10 ký tự");
+    if (ID.length() > 10 && ten_nguoi_choi.length()>10) {
+        JOptionPane.showMessageDialog(null, "ID không được vượt quá 10 ký tự và tên người chơi không được vượt quá 10 ký tự");
     } else {
         // xử lý khi ID hợp lệ
     }
