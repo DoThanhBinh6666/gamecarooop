@@ -97,10 +97,20 @@ public class Ratings extends javax.swing.JFrame {
      String ID= txtidnguoichoi.getText();
 
     // Kiểm tra xem giá trị của trường idNguoiChoi có phải là số không âm hay không
+    if (ID.length() > 10) {
+        JOptionPane.showMessageDialog(null, "ID không được vượt quá 6 ký tự.");
+    } else {
+        // xử lý khi ID hợp lệ
+    }
+    if (ID.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Vui lòng nhập ID");
+        return;
+    }
     if (!ID.matches("\\d+")) {
         JOptionPane.showMessageDialog(this, "ID người chơi phải là số nguyên không âm!");
         return;
     } 
+
 
     // Thực hiện kết nối tới cơ sở dữ liệu
     String url = "jdbc:mysql://localhost:3306/doangame";
@@ -138,10 +148,10 @@ public class Ratings extends javax.swing.JFrame {
         // Tạo một bảng để hiển thị danh sách các người chơi theo thứ tự giảm dần của điểm số
     // Tạo một bảng để hiển thị danh sách các người chơi theo thứ tự giảm dần của điểm số
 String[] columnNames = {"Thứ tự", "Tên người chơi", "Điểm số"};
-Object[][] data = new Object[10][3];
+Object[][] data = new Object[30][3];
 int i = 0;
 int rank = 1;
-while (rs2.next() && i < 10) {
+while (rs2.next() && i < 30) {
     data[i][0] = rank++;
     data[i][1] = rs2.getString("ten_nguoi_choi");
     data[i][2] = rs2.getInt("diem_so");

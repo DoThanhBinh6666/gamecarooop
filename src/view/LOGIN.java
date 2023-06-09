@@ -104,7 +104,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Kiểm tra nếu tên đăng nhập và mật khẩu không đúng
-    if (!username.equals("binh123") || !password.equals("Binh2710")) {
+    if (!username.equals("doan") || !password.equals("nhom5")) {
         JOptionPane.showMessageDialog(this, "Tên đăng nhập hoặc mật khẩu không đúng");
         return;
     }
