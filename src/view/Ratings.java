@@ -43,6 +43,7 @@ public class Ratings extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         txtidnguoichoi = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -61,7 +62,7 @@ public class Ratings extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 112, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, -1));
 
         jButton2.setText("Thoát");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +70,15 @@ public class Ratings extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 130, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 60, -1));
+
+        jButton3.setText("Bảng xếp hạng");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 110, -1));
         getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -137,8 +146,19 @@ public class Ratings extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Không tìm thấy thông tin người chơi với ID: " + ID);      
         } 
+    } catch (SQLException e) {
+    e.printStackTrace();
+}
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        // Tạo câu truy vấn SQL để lấy danh sách các người chơi theo thứ tự giảm dần của điểm số
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        String url = "jdbc:mysql://localhost:3306/doangame";
+    String username = "root";
+    String password = "";
+
+    try (Connection conn = DriverManager.getConnection(url, username, password)) {
+ 
         String query2 = "SELECT ten_nguoi_choi, diem_so FROM nguoi_choi ORDER BY diem_so DESC";
         PreparedStatement statement2 = conn.prepareStatement(query2);
 
@@ -164,7 +184,7 @@ JOptionPane.showMessageDialog(this, scrollPane, "Xếp hạng người chơi", J
 } catch (SQLException e) {
     e.printStackTrace();
 }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -204,6 +224,7 @@ JOptionPane.showMessageDialog(this, scrollPane, "Xếp hạng người chơi", J
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
