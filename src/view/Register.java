@@ -151,7 +151,7 @@ public class Register extends javax.swing.JFrame {
 
         // In ra thông báo nếu chèn dữ liệu thành công
         if (rowsInserted > 0) {
-            JOptionPane.showMessageDialog(this, "them thanh cong!");
+            JOptionPane.showMessageDialog(this, "Thêm thành công!");
         }        
     }
     
