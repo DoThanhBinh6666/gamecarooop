@@ -347,47 +347,52 @@ public final class BoardAI extends javax.swing.JFrame {
         Home.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
-    private void handleClickButton(Point point) {
+      private void handleClickButton(Point point) {
 
-        // TODO: CALC LOGIC HERE
-        point.log();
-        Buttons[point.x][point.y].setState(true);
-        Buttons[point.x][point.y].setEnabled(false);
-        if (getScore(getMatrixBoard(), true, false) >= winScore) {
-            JOptionPane.showMessageDialog(null, "Bạn đã thắng");
-            userWin++;
-            displayWin();
-            newGame();
-            return;
-        }
-
-        int nextMoveX = 0, nextMoveY = 0;
-        int[] bestMove = calcNextMove(3);
-
-        if (bestMove != null) {
-            nextMoveX = bestMove[0];
-            nextMoveY = bestMove[1];
-        }
-        Buttons[nextMoveX][nextMoveY].setState(false);
-        Buttons[nextMoveX][nextMoveY].setEnabled(false);
-        if (getScore(getMatrixBoard(), false, true) >= winScore) {
-            JOptionPane.showMessageDialog(null, "Bạn đã thua");
-            aIWin++;
-            displayWin();
-            newGame();
-        }
+    // Check if the button has already been enabled
+    if (!Buttons[point.x][point.y].isEnabled()) {
+        return;
+    }
+    
+    // TODO: CALC LOGIC HERE
+    point.log();
+    Buttons[point.x][point.y].setState(true);
+    Buttons[point.x][point.y].setEnabled(false);
+    if (getScore(getMatrixBoard(), true, false) >= winScore) {
+        JOptionPane.showMessageDialog(null, "Bạn đã thắng");
+        userWin++;
+        displayWin();
+        newGame();
+        return;
     }
 
-    private void newGame() {
-        for (int i = 0; i < Buttons.length; i++) {
+    int nextMoveX = 0, nextMoveY = 0;
+    int[] bestMove = calcNextMove(3);
+
+    if (bestMove != null) {
+        nextMoveX = bestMove[0];
+        nextMoveY = bestMove[1];
+    }
+    Buttons[nextMoveX][nextMoveY].setState(false);
+    Buttons[nextMoveX][nextMoveY].setEnabled(false);
+    if (getScore(getMatrixBoard(), false, true) >= winScore) {
+        JOptionPane.showMessageDialog(null, "Bạn đã thua");
+        aIWin++;
+        displayWin();
+        newGame();
+    }
+}
+
+    private void newGame(){
+        for(int i = 0; i < Buttons.length; i++) {
             for (int j = 0; j < Buttons.length; j++) {
                 Buttons[i][j].resetState();
             }
         }
-
+        
         gameNumber++;
         if (gameNumber % 2 == 0) {
-            JOptionPane.showMessageDialog(rootPane, "Máy đi trước", "Ván mới", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, "Máy đi trước", "Ván mới",JOptionPane.INFORMATION_MESSAGE);
             Buttons[9][9].setState(false);
             Buttons[9][9].setEnabled(false);
 
@@ -395,11 +400,12 @@ public final class BoardAI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Bạn đã thua");
                 newGame();
             }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Bạn đi trước", "Ván mới", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "Bạn đi trước", "Ván mới",JOptionPane.INFORMATION_MESSAGE);
         }
     }
-
+    
     private void displayWin() {
         String e = jTextField1.getText();
         e = userWin + " - " + aIWin;
