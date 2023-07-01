@@ -139,28 +139,25 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" pref="92" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" min="-2" pref="45" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                  <Component id="lbTen1" min="-2" pref="78" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Component id="lbTen2" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel3" pref="92" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="lbAvartar1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="lbAvartar2" min="-2" pref="95" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="lbTen1" min="-2" pref="78" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="lbTen2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -281,13 +278,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="home" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="jButton4" min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="exit" min="-2" pref="81" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="81" max="-2" attributes="0"/>
+                          <Component id="vanmoi" min="-2" pref="81" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -298,11 +295,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="vanmoi" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="home" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="exit" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="44" max="32767" attributes="0"/>
               </Group>
@@ -310,28 +307,28 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="vanmoi">
           <Properties>
             <Property name="text" type="java.lang.String" value="V&#xe1;n m&#x1edb;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vanmoiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="home">
           <Properties>
             <Property name="text" type="java.lang.String" value="Trang ch&#x1ee7;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="exit">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

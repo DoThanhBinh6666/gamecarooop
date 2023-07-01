@@ -43,8 +43,8 @@ public class Register extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        register = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         txttennguoichoi = new javax.swing.JTextField();
         txtidnguoichoi = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
@@ -63,21 +63,21 @@ public class Register extends javax.swing.JFrame {
         jLabel2.setText("ID");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 100, -1));
 
-        jButton1.setText("Đăng Ký");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        register.setText("Đăng Ký");
+        register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                registerActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
 
-        jButton2.setText("Thoát");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        exit.setText("Thoát");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 87, -1));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 87, -1));
 
         txttennguoichoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,20 +99,20 @@ public class Register extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
     int confirmed = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát", JOptionPane.YES_NO_OPTION);
 
     if (confirmed == JOptionPane.YES_OPTION); 
       Home homeFrame = new Home(); // tạo một đối tượng JFrame mới
       homeFrame.setVisible(true); // hiển thị JFrame mới
       this.dispose(); // đóng JFrame hiện tại
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
     private void txttennguoichoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttennguoichoiActionPerformed
         
     }//GEN-LAST:event_txttennguoichoiActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
     String ten_nguoi_choi= txttennguoichoi.getText();
     String ID = txtidnguoichoi.getText();
     
@@ -159,7 +159,7 @@ public class Register extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "ID bị trùng");
         e.printStackTrace();
     }   
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_registerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,12 +200,12 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton register;
     private javax.swing.JPasswordField txtidnguoichoi;
     private javax.swing.JTextField txttennguoichoi;
     // End of variables declaration//GEN-END:variables

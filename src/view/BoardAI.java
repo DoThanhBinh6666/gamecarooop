@@ -132,8 +132,8 @@ public final class BoardAI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        vanmoi = new javax.swing.JButton();
+        home = new javax.swing.JButton();
         exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -175,11 +175,9 @@ public final class BoardAI extends javax.swing.JFrame {
 
         lbAvartar2.setBackground(new java.awt.Color(255, 153, 153));
         lbAvartar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/3 (1).png"))); // NOI18N
-        lbAvartar2.setBorder(null);
 
         lbAvartar1.setBackground(new java.awt.Color(255, 153, 153));
         lbAvartar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/1 (1).png"))); // NOI18N
-        lbAvartar1.setBorder(null);
 
         lbTen1.setText("Người chơi");
 
@@ -244,17 +242,17 @@ public final class BoardAI extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
-        jButton2.setText("Ván mới");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        vanmoi.setText("Ván mới");
+        vanmoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                vanmoiActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Trang chủ");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        home.setText("Trang chủ");
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
 
@@ -271,23 +269,23 @@ public final class BoardAI extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jButton3)
+                .addComponent(home)
                 .addGap(22, 22, 22)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(vanmoi, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(72, 72, 72))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(vanmoi)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(home)
                     .addComponent(exit))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
@@ -324,7 +322,7 @@ public final class BoardAI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void vanmoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vanmoiActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
         for (int i = 0; i < Buttons.length; i++) {
@@ -332,7 +330,7 @@ public final class BoardAI extends javax.swing.JFrame {
                 Buttons[i][j].resetState();
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_vanmoiActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
@@ -340,13 +338,13 @@ public final class BoardAI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_exitActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Bạn muốn thoát?", "Thoát", JOptionPane.INFORMATION_MESSAGE);
         Home Home = new Home();
         Home.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
       private void handleClickButton(Point point) {
 
     // Check if the button has already been enabled
@@ -926,8 +924,7 @@ public final class BoardAI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exit;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -940,5 +937,6 @@ public final class BoardAI extends javax.swing.JFrame {
     private javax.swing.JPanel plBoardContainer;
     private javax.swing.JPanel plPlayer;
     private javax.swing.JPanel plScore;
+    private javax.swing.JButton vanmoi;
     // End of variables declaration//GEN-END:variables
 }

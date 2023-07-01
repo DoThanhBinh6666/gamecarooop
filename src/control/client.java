@@ -4,7 +4,6 @@
  */
 package control;
 import javax.swing.JFrame;
-import model.User;
 import view.Register;
 import view.Home;
 import view.Login;
@@ -27,7 +26,6 @@ public class Client {
         BoardClient
     }
     //giao dien
-    public static User user;
     public static Login login;
     public static Home home;
     public static Ratings ratings;

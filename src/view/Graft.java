@@ -34,7 +34,7 @@ public class Graft extends javax.swing.JFrame {
         txtbatdau = new javax.swing.JButton();
         txtid1 = new javax.swing.JPasswordField();
         txtid2 = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -67,13 +67,13 @@ public class Graft extends javax.swing.JFrame {
         getContentPane().add(txtid1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 120, -1));
         getContentPane().add(txtid2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 130, -1));
 
-        jButton2.setText("Thoát");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        exit.setText("Thoát");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 90, -1));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 90, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,8 +144,8 @@ public class Graft extends javax.swing.JFrame {
         }
 
         // Lưu thông tin người chơi vào biến static trong lớp BoardClient
-        BoardClient.idNguoiChoi1 = Integer.parseInt(id1);
-        BoardClient.idNguoiChoi2 = Integer.parseInt(id2);
+        BoardClient.idNguoiChoi1 = Integer.valueOf(id1);
+        BoardClient.idNguoiChoi2 = Integer.valueOf(id2);
         BoardClient.tenNguoiChoi1 = tenNguoiChoi1;
         BoardClient.tenNguoiChoi2 = tenNguoiChoi2;
 
@@ -160,11 +160,11 @@ public class Graft extends javax.swing.JFrame {
     
     }//GEN-LAST:event_txtbatdauActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
       Home homeFrame = new Home(); // tạo một đối tượng JFrame mới
       homeFrame.setVisible(true); // hiển thị JFrame mới
       this.dispose();     
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
     public static void main(String args[]) {
      
@@ -176,7 +176,7 @@ public class Graft extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

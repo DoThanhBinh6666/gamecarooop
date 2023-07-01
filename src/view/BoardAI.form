@@ -265,14 +265,14 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="home" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="exit" min="-2" pref="81" max="-2" attributes="0"/>
                   <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="81" max="-2" attributes="0"/>
+                  <Component id="vanmoi" min="-2" pref="81" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -281,10 +281,10 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="vanmoi" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="home" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="exit" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="44" max="32767" attributes="0"/>
@@ -293,20 +293,20 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="vanmoi">
           <Properties>
             <Property name="text" type="java.lang.String" value="V&#xe1;n m&#x1edb;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="vanmoiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="home">
           <Properties>
             <Property name="text" type="java.lang.String" value="Trang ch&#x1ee7;"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="exit">

@@ -37,118 +37,118 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        boardClient = new javax.swing.JButton();
+        boardAI = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ratings = new javax.swing.JButton();
+        hd = new javax.swing.JButton();
+        register = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Game Caro");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_circled_play_24px.png"))); // NOI18N
-        jButton1.setText("CHƠI NGAY    ");
-        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        boardClient.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        boardClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_circled_play_24px.png"))); // NOI18N
+        boardClient.setText("CHƠI NGAY    ");
+        boardClient.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        boardClient.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                boardClientActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 150, 30));
+        getContentPane().add(boardClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 150, 30));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON HOME 3.png"))); // NOI18N
-        jButton2.setText("CHƠI VỚI MÁY");
-        jButton2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        boardAI.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        boardAI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON HOME 3.png"))); // NOI18N
+        boardAI.setText("CHƠI VỚI MÁY");
+        boardAI.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        boardAI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                boardAIActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 150, 30));
+        getContentPane().add(boardAI, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 150, 30));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_exit_sign_24px.png"))); // NOI18N
-        jButton3.setText("THOÁT GAME");
-        jButton3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_exit_sign_24px.png"))); // NOI18N
+        exit.setText("THOÁT GAME");
+        exit.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 150, 30));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 150, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/LOGO HOME.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 160, 150));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICONHOM2.png"))); // NOI18N
-        jButton5.setText("THÀNH TÍCH ");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        ratings.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ratings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICONHOM2.png"))); // NOI18N
+        ratings.setText("THÀNH TÍCH ");
+        ratings.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ratings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                ratingsActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 140, 50));
+        getContentPane().add(ratings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 140, 50));
 
-        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICONHOME4.png"))); // NOI18N
-        jButton6.setText("CÁCH CHƠI");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        hd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        hd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICONHOME4.png"))); // NOI18N
+        hd.setText("CÁCH CHƠI");
+        hd.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        hd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                hdActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 160, 50));
+        getContentPane().add(hd, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 160, 50));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_login_32px.png"))); // NOI18N
-        jButton4.setText("ĐĂNG KÝ");
-        jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        register.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        register.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons8_login_32px.png"))); // NOI18N
+        register.setText("ĐĂNG KÝ");
+        register.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        register.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                registerActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 130, 50));
+        getContentPane().add(register, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 130, 50));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void hdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hdActionPerformed
         // TODO add your handling code here:
          JOptionPane.showMessageDialog(rootPane, "Luật chơi: luật quốc tế 5 nước chặn 2 đầu\n"
                 + "Hai người chơi luân phiên nhau chơi trước\n"
                 + "Với mỗi ván chơi thắng bạn có thêm 20 điểm, nếu hòa bạn được thêm -10 điểm,\n"
                 + "Chúc bạn chơi game vui vẻ <3");
                                              
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_hdActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void boardClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardClientActionPerformed
         Graft ghep = new Graft();
           ghep.setVisible(true);
 
     // Ẩn JFrame hiện tại (JFrame Menu)
     this.setVisible(false);   // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_boardClientActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void boardAIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boardAIActionPerformed
         // TODO add your handling code here:
         BoardAI board = new BoardAI();
     board.setVisible(true);
 
     // Ẩn JFrame hiện tại (JFrame Menu)
     this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_boardAIActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         int confirmed = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát chương trình?", "Xác nhận kết thúc chương trình", JOptionPane.YES_NO_OPTION);
 
@@ -156,9 +156,9 @@ public class Home extends javax.swing.JFrame {
         // Kết thúc chương trình
         System.exit(0);
     }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void ratingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ratingsActionPerformed
         // TODO add your handling code here:
        Ratings Ratings = new Ratings();
        Ratings.setVisible(true);
@@ -166,14 +166,14 @@ public class Home extends javax.swing.JFrame {
     // Ẩn JFrame hiện tại (JFrame Menu)
     this.setVisible(false);
 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_ratingsActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
         // TODO add your handling code here:
         Register Register = new Register();
         Register.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_registerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,12 +212,12 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton boardAI;
+    private javax.swing.JButton boardClient;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton hd;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton ratings;
+    private javax.swing.JButton register;
     // End of variables declaration//GEN-END:variables
 }

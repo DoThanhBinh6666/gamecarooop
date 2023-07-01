@@ -1,10 +1,10 @@
 
-package DAO;
+package SQL;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
-public class DAO {
+public class connectSQL {
     protected Connection con;
 
   public static void main(String[] args) throws SQLException {
@@ -16,7 +16,7 @@ public class DAO {
       System.out.println("Ket noi thanh cong");
       System.out.println(con.getCatalog());
     } catch(SQLException ex) {
-      Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, "loi khi ket noi MySQL", ex);
+      Logger.getLogger(connectSQL.class.getName()).log(Level.SEVERE, "loi khi ket noi MySQL", ex);
     }
   }
 }

@@ -37,7 +37,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        dangnhap = new javax.swing.JButton();
         txtmatkhau = new javax.swing.JPasswordField();
         txtdangnhap = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -51,16 +51,16 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON-LOGIN1.jpg"))); // NOI18N
-        jButton1.setText("ĐĂNG NHẬP ");
-        jButton1.setName("jButton1"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        dangnhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        dangnhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/ICON-LOGIN1.jpg"))); // NOI18N
+        dangnhap.setText("ĐĂNG NHẬP ");
+        dangnhap.setName("dangnhap"); // NOI18N
+        dangnhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                dangnhapActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 160, -1));
+        getContentPane().add(dangnhap, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 160, -1));
 
         txtmatkhau.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtmatkhau.setName("txtmatkhau"); // NOI18N
@@ -92,7 +92,7 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void dangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangnhapActionPerformed
         // TODO add your handling code here:
        String username = txtdangnhap.getText();
        String password = new String(txtmatkhau.getPassword());
@@ -114,7 +114,7 @@ public class Login extends javax.swing.JFrame {
     // Đóng JFrame hiện tại
     this.dispose();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_dangnhapActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,7 +152,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton dangnhap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

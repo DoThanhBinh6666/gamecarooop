@@ -41,9 +41,9 @@ public class Ratings extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        find = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
+        rank = new javax.swing.JButton();
         txtidnguoichoi = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -56,29 +56,29 @@ public class Ratings extends javax.swing.JFrame {
         jLabel1.setText("Nhập ID người chơi :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
-        jButton1.setText("Tìm Kiếm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        find.setText("Tìm Kiếm");
+        find.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                findActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, -1));
+        getContentPane().add(find, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 80, -1));
 
-        jButton2.setText("Thoát");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        exit.setText("Thoát");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 60, -1));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 60, -1));
 
-        jButton3.setText("Bảng xếp hạng");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        rank.setText("Bảng xếp hạng");
+        rank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                rankActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 110, -1));
+        getContentPane().add(rank, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 110, -1));
         getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -93,16 +93,16 @@ public class Ratings extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
     int confirmed = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát", JOptionPane.YES_NO_OPTION);
 
     if (confirmed == JOptionPane.YES_OPTION);
       Home homeFrame = new Home(); // tạo một đối tượng JFrame mới
       homeFrame.setVisible(true); // hiển thị JFrame mới
       this.dispose(); // đóng JFrame hiện tại        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void findActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findActionPerformed
      String ID= txtidnguoichoi.getText();
 
     // Kiểm tra xem giá trị của trường idNguoiChoi có phải là số không âm hay không
@@ -149,9 +149,9 @@ public class Ratings extends javax.swing.JFrame {
     } catch (SQLException e) {
     e.printStackTrace();
 }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_findActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void rankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rankActionPerformed
         // TODO add your handling code here:
         String url = "jdbc:mysql://localhost:3306/doangame";
     String username = "root";
@@ -184,7 +184,7 @@ JOptionPane.showMessageDialog(this, scrollPane, "Xếp hạng người chơi", J
 } catch (SQLException e) {
     e.printStackTrace();
 }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_rankActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -222,12 +222,12 @@ JOptionPane.showMessageDialog(this, scrollPane, "Xếp hạng người chơi", J
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton find;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton rank;
     private javax.swing.JPasswordField txtidnguoichoi;
     // End of variables declaration//GEN-END:variables
 

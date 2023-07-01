@@ -337,9 +337,9 @@ public final class BoardClient extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        vanmoi = new javax.swing.JButton();
+        home = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Game Caro");
@@ -402,24 +402,23 @@ public final class BoardClient extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(plPlayerLayout.createSequentialGroup()
-                        .addGroup(plPlayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(plPlayerLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(plPlayerLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(63, 63, 63)
-                                .addComponent(lbTen2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(12, 12, 12))
                     .addGroup(plPlayerLayout.createSequentialGroup()
                         .addComponent(lbAvartar1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbAvartar2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(plPlayerLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lbTen1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(83, 83, 83)
+                        .addComponent(lbTen2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         plPlayerLayout.setVerticalGroup(
@@ -448,24 +447,24 @@ public final class BoardClient extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Chức năng", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("sansserif", 1, 16))); // NOI18N
 
-        jButton2.setText("Ván mới");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        vanmoi.setText("Ván mới");
+        vanmoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                vanmoiActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Trang chủ");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        home.setText("Trang chủ");
+        home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                homeActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Thoát");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        exit.setText("Thoát");
+        exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                exitActionPerformed(evt);
             }
         });
 
@@ -477,23 +476,23 @@ public final class BoardClient extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jButton3)
+                        .addComponent(home)
                         .addGap(22, 22, 22)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(vanmoi, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(vanmoi)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(home)
+                    .addComponent(exit))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -532,7 +531,7 @@ public final class BoardClient extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void vanmoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vanmoiActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Trò Chơi Mới", "Thoát", JOptionPane.INFORMATION_MESSAGE);
             for (int i1 = 0; i1 < n; i1++) {
@@ -543,20 +542,20 @@ public final class BoardClient extends javax.swing.JFrame {
             }
             
  
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_vanmoiActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Bạn muốn thoát?", "Thoát", JOptionPane.INFORMATION_MESSAGE);
         Home Home = new Home();
         Home.setVisible(true);
     this.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_homeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_exitActionPerformed
     
     /**
      * @param args the command line arguments
@@ -596,9 +595,8 @@ public final class BoardClient extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton exit;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -611,5 +609,6 @@ public final class BoardClient extends javax.swing.JFrame {
     private javax.swing.JPanel plBoardContainer;
     private javax.swing.JPanel plPlayer;
     private javax.swing.JPanel plScore;
+    private javax.swing.JButton vanmoi;
     // End of variables declaration//GEN-END:variables
 }

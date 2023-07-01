@@ -28,7 +28,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="dangnhap">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -37,10 +37,10 @@
           <Image iconType="3" name="/IMG/ICON-LOGIN1.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x110;&#x102;NG NH&#x1eac;P "/>
-        <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="dangnhap" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dangnhapActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
