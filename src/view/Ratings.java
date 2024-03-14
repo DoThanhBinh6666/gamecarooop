@@ -70,7 +70,7 @@ public class Ratings extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 60, -1));
+        getContentPane().add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(218, 140, -1, -1));
 
         rank.setText("Bảng xếp hạng");
         rank.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +78,7 @@ public class Ratings extends javax.swing.JFrame {
                 rankActionPerformed(evt);
             }
         });
-        getContentPane().add(rank, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 110, -1));
+        getContentPane().add(rank, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 110, -1));
         getContentPane().add(txtidnguoichoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 150, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
